@@ -3,6 +3,6 @@ from cmspwn.module import pwnfunc
 
 @pwnfunc
 def is_joomla(cmspwn,response):
-	if 'joomla.css' in response.content:
+	if 'joomla.css' in response.content or 'content="Joomla!' in response.content:
            cmspwn.found  = True; cmspwn.Framework = 'Joomla'; cmspwn.site = 'https://www.joomla.org/'
            return
